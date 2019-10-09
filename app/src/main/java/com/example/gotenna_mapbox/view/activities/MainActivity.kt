@@ -1,8 +1,7 @@
-package com.example.gotenna_mapbox.view
+package com.example.gotenna_mapbox.view.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.example.gotenna_mapbox.R
 import com.example.gotenna_mapbox.viewmodel.LocationViewModel
