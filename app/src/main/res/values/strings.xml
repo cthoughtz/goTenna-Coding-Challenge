@@ -3,4 +3,5 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="access_token">pk.eyJ1IjoiY3Rob3VnaHR6IiwiYSI6ImNrMWl5MTZjeTA0bDMzaHFjems0ZWlicHEifQ.h80ITGVYLRVGL6i706g-Mw</string>
 </resources>
