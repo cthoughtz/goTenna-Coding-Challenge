@@ -27,13 +27,6 @@ class MapFragment : Fragment(){
     lateinit var map: MapboxMap
     lateinit var myViewModel: LocationViewModel
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,13 +35,8 @@ class MapFragment : Fragment(){
         return inflater.inflate(R.layout.fragment_map, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        //(activity as? MainActivity)?.locationViewModel?.locationInformation
-    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
         Mapbox.getInstance(view.context, getString(R.string.access_token))
         mapView = view.findViewById(R.id.mapView)
@@ -64,7 +52,6 @@ class MapFragment : Fragment(){
                 }
             })
         }
-
     }
 
     override fun onStart() {

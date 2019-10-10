@@ -18,7 +18,7 @@ import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
 
-    public lateinit var locationViewModel: LocationViewModel
+     lateinit var locationViewModel: LocationViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

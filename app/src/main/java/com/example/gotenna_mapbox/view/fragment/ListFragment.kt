@@ -23,7 +23,6 @@ import kotlinx.android.synthetic.main.fragment_list.*
 
 class ListFragment : Fragment() {
 
-    var locationList = ArrayList<Location>()
     val locationAdapter = LocationAdapter(arrayListOf())
 
     lateinit var myViewModel: LocationViewModel

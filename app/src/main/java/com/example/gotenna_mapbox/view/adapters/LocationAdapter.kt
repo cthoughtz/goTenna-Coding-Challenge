@@ -25,7 +25,7 @@ class LocationAdapter(private val locationArray: MutableList<Location>): Recycle
         holder.bind(locationArray[position])
     }
 
-    class LocationHolder(v: View):RecyclerView.ViewHolder(v), View.OnClickListener{
+    class LocationHolder(v: View):RecyclerView.ViewHolder(v){
 
         val name = v.tvName
         val lat = v.tvLat
@@ -39,9 +39,5 @@ class LocationAdapter(private val locationArray: MutableList<Location>): Recycle
             desc.text = location.desc.toString()
 
         }
-        override fun onClick(click: View?) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        }
-
     }
 }
