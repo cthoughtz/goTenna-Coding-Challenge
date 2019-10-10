@@ -44,8 +44,13 @@ class MapFragment : Fragment(){
         return inflater.inflate(R.layout.fragment_map, container, false)
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        //(activity as? MainActivity)?.locationViewModel?.locationInformation
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         Mapbox.getInstance(view.context, getString(R.string.access_token))
         mapView = view.findViewById(R.id.mapView)
