@@ -7,6 +7,7 @@ import com.example.gotenna_mapbox.model.api.LocationApiClient
 import com.example.gotenna_mapbox.model.api.LocationService
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
 open class LocationViewModel() : ViewModel() {
@@ -23,7 +24,7 @@ open class LocationViewModel() : ViewModel() {
                 ?.subscribeOn(Schedulers.io())
                 ?.observeOn(AndroidSchedulers.mainThread())
                 ?.doOnSuccess {
-                    locationInformation.postValue(it)
+                    locationInformation.value = it
                 }?.subscribe()
         )
     }
