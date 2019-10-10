@@ -25,9 +25,7 @@ class MapFragment : Fragment(){
 
     private lateinit var mapView: MapView
     lateinit var map: MapboxMap
-    lateinit var latLngBounds: LatLngBounds
     lateinit var myViewModel: LocationViewModel
-    var test: Float? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,21 +55,16 @@ class MapFragment : Fragment(){
         mapView.onCreate(savedInstanceState)
 
         myViewModel = ViewModelProviders.of(activity!!).get(LocationViewModel::class.java)
-        myViewModel.locationInformation.observe(this, Observer { info ->
+        mapView.getMapAsync {
+            map = it
+            myViewModel.locationInformation.observe(this, Observer { info ->
+                info.forEach {
+                    val point = LatLng(it.lat!!.toDouble(), it.lng!!.toDouble())
+                    map.addMarker(MarkerOptions().position(point))
+                }
+            })
+        }
 
-            val cadman = LatLng(info.get(0).lat!!.toDouble(), info.get(0).lng!!.toDouble())
-            val borough = LatLng(info.get(1).lat!!.toDouble(), info.get(1).lng!!.toDouble())
-            val dos = LatLng(info.get(2).lat!!.toDouble(), info.get(2).lng!!.toDouble())
-            val golden = LatLng(info.get(3).lat!!.toDouble(), info.get(3).lng!!.toDouble())
-
-            mapView.getMapAsync(){
-                map = it
-                    map.addMarker(MarkerOptions().position(cadman))
-                    map.addMarker(MarkerOptions().position(borough))
-                    map.addMarker(MarkerOptions().position(dos))
-                    map.addMarker(MarkerOptions().position(golden))
-            }
-        })
     }
 
     override fun onStart() {

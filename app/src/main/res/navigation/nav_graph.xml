@@ -11,23 +11,14 @@
         android:id="@+id/mapFragment"
         android:name="com.example.gotenna_mapbox.view.fragment.MapFragment"
         android:label="Map Fragment"
-        tools:layout="@layout/fragment_map">
-
-        <action
-            android:id="@+id/action_mapFragment_to_listFragment"
-            app:destination="@id/listFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_map"/>
 
     <!--List Fragment-->
     <fragment
         android:id="@+id/listFragment"
         android:name="com.example.gotenna_mapbox.view.fragment.ListFragment"
         android:label="List Fragment"
-        tools:layout="@layout/fragment_list">
-        <action
-            android:id="@+id/action_listFragment_to_mapFragment"
-            app:destination="@id/mapFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_list"/>
 
 
 </navigation>
